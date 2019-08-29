@@ -150,8 +150,6 @@ img{
 @media (max-width: 550px){
   body {
     background-color: #000;
-    display: flex;
-    justify-content: center;
   }
 
   .title {
@@ -160,5 +158,11 @@ img{
 
   ul {
     border-radius: 0;
+  }
+}
+
+@media (min-width: 551px){
+  .modal-overlay {
+    display: none;
   }
 }
