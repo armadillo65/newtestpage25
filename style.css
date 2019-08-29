@@ -150,6 +150,10 @@ img{
   img {
     height: 350px;
   }
+  
+  .container {
+    padding-bottom: 50px;
+  }
 }
 
 @media (max-width: 550px){
