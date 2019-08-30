@@ -2,8 +2,8 @@ $(document).ready(function(){
 
 // Modal
 var modalGreeting = "<h1>Guitar Tuner</h1>";
-modalGreeting+= "<h2>Standard Tuning</h2>";
-modalGreeting+="<p>Click on string to hear tone</p>";
+modalGreeting+= "<p>Select your tuning preference</p>";
+modalGreeting+="<p>Tap on string to hear it's tone</p>";
 
   $('.modal-wrap div').html(modalGreeting);
 
