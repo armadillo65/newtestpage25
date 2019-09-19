@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion App</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div id="conversionApp" class="container">
+      <h1>{{title}}</h1>
+      <select v-on:change="selection">
+        <option value="">Select a conversion category</option>
+        <option v-for="item in selectType">{{item}}</option>
+      </select>
+
+      <div class="product">
+        <ul>
+          <li :data-name="item.name" class="item" v-for="item in products" v-show="type === '' || type === item.type">
+            <p class="product">{{item.title}}</p>
+            <span>{{item.conv}}</span>
+            <input type="number" value="1">
+          </li>
+        </ul>
+    </div>
+
+
+    <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
