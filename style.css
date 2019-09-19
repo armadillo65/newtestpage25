@@ -73,6 +73,10 @@ h1{
   input {
     right: 35px;
   }
+  
+  input[type=number]::-webkit-inner-spin-button {
+    cursor: pointer;
+  }
 
   span {
     margin-left: 5px;
