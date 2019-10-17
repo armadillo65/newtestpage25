@@ -94,13 +94,23 @@ sliderH.oninput = function(){
 };
 
 sliderS.oninput = function(){
-  outputS.textContent = this.value;
+  if(sel.value == "rgb"){
+    outputS.textContent = this.value;
+  }
+  else if(sel.value == "hsl"){
+    outputS.textContent = this.value + "%";
+  }
   b= sliderS.value;
   changeSquare();
 };
 
 sliderL.oninput = function(){
-  outputL.textContent = this.value;
+  if(sel.value == "rgb"){
+    outputL.textContent = this.value;
+  }
+  else if(sel.value == "hsl"){
+    outputL.textContent = this.value + "%";
+  }
   c= sliderL.value;
   changeSquare();
 };
