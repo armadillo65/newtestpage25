@@ -1,0 +1,39 @@
+li {
+  list-style: none;
+}
+
+.item {
+  width: 150px;
+  display: inline-block;
+  background-color: lightgrey;
+  padding: 10px;
+  margin: 20px;
+}
+
+.cart {
+  background-color: lightgrey;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+button {
+  color: #fff;
+  border: 0.25px solid #fff;
+  border-radius: 5px;
+  box-shadow: -1px -1px  rgba(0,0,0,0.2) inset;
+
+}
+
+.add-item,
+.add-to-cart {
+  background-color: #28a745;
+}
+
+.remove-item,
+#clear-cart {
+  background-color: #dc3545;
+}
+
+.delete-item {
+  background-color: #000;
+}
