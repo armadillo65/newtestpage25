@@ -1,4 +1,5 @@
-
+$(document).ready(function(){
+ 
 // ------ Test for input field -----
  $('input').change(function(){
 
@@ -247,3 +248,5 @@ function loadCart(){
 }
 loadCart();  // loads cart from local storage
 displayCart(); // displays the cart after loading
+
+ }); // end doc ready
