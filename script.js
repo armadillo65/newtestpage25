@@ -97,12 +97,14 @@ function addItemToCart(name, price, count){
   for(var i in cart){
     if(cart[i].name === name){
       cart[i].count += count;
-      return cart;
+      saveCart();
+      return;
     }
   }
   var item = new Item(name, price, count);
   console.log(item)  
-//   cart.push(item);
+  cart.push(item);
+  saveCart();
 };
 
 // Display Cart
