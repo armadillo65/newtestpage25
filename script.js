@@ -101,7 +101,8 @@ function addItemToCart(name, price, count){
     }
   }
   var item = new Item(name, price, count);
-  cart.push(item);
+  console.log(item)  
+//   cart.push(item);
 };
 
 // Display Cart
