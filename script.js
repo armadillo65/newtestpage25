@@ -97,14 +97,11 @@ function addItemToCart(name, price, count){
   for(var i in cart){
     if(cart[i].name === name){
       cart[i].count += count;
-      saveCart();
-      return;
+      return cart;
     }
   }
   var item = new Item(name, price, count);
-  console.log(item)  
   cart.push(item);
-  saveCart();
 };
 
 // Display Cart
@@ -238,7 +235,17 @@ displayCart(); // displays the cart after loading
 
 // -------------
 $('.add-to-cart').click(function(){
-  event.preventDefault();
+  /*
+  var x = $('<p></p>');
+  var y = $('<p></p>');
+  var z = $('<p></p>');
+   x = $('.product').eq(i+1).html();
+   y = $('.cost').eq(i).text();
+   z = $('.target').eq(i).val();
+  $('.cart').append(x + " ");
+  $('.cart').append(y + " ");
+  $('.cart').append("Qty: " + z);
+*/
   var name = $(this).attr('data-name');
   var price = Number($(this).attr('data-price'));
   addItemToCart(name, price, 1);
