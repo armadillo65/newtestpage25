@@ -242,6 +242,6 @@ loadCart();  // loads cart from local storage
 displayCart(); // displays the cart after loading
 
 
-
+console.log("End of Script");
 
 }); // end doc ready
