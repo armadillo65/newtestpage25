@@ -74,35 +74,23 @@ const shoppingCart = new Vue ({
     }
   }
 }); //end Vue
+// ------------------------------
 
+// ------ Add to Cart Btn Click -------
+$('.add-to-cart').click(function(){
+  event.preventDefault(); // keeps link from reloading page
+  var name = $(this).attr('data-name');
+  var price = Number($(this).attr('data-price'));
 
-
-
+  addItemToCart(name, price, 1);
+  displayCart();
+}); // end Add To Cart
 
 // Clear cart button click
 $('#clear-cart').click(function(){
   emptyCart();
   displayCart();
 });
-
-var cart = [];
-
-var Item = function(name, price, count){
-  this.name = name;
-  this.price = price;
-  this.count = count;
-};
-
-function addItemToCart(name, price, count){
-  for(var i in cart){
-    if(cart[i].name === name){
-      cart[i].count += count;
-      return cart;
-    }
-  }
-  var item = new Item(name, price, count);
-  cart.push(item);
-};
 
 // Display Cart
 function displayCart(){
@@ -152,6 +140,26 @@ function displayCart(){
 
 }; // ---  end Display function ------
 
+var cart = [];
+
+var Item = function(name, price, count){
+  this.name = name;
+  this.price = price;
+  this.count = count;
+};
+
+function addItemToCart(name, price, count){
+  for(var i in cart){
+    if(cart[i].name === name){
+      cart[i].count += count;
+      saveCart();
+      return;
+    }
+  }
+  var item = new Item(name, price, count);
+  cart.push(item);
+  saveCart();
+};
 
 // Remove 1 unit of an item from cart
 function removeItemFromCart(name, price, count){
@@ -164,6 +172,7 @@ function removeItemFromCart(name, price, count){
       break;
     }
   }
+  saveCart();
 };
 
 // Remove ALL units of an Item
@@ -174,13 +183,13 @@ function clearItemFromCart(name){
     break;
     }
   }
-  //saveCart();
+  saveCart();
 };
 
 // Clear Entire Cart
 function emptyCart(name, price, count){
   cart = [];
-  //saveCart();
+  saveCart();
 };
 
 // Total Cart Unit Count
@@ -233,25 +242,6 @@ loadCart();  // loads cart from local storage
 displayCart(); // displays the cart after loading
 
 
-// -------------
-$('.add-to-cart').click(function(){
-  /*
-  var x = $('<p></p>');
-  var y = $('<p></p>');
-  var z = $('<p></p>');
-   x = $('.product').eq(i+1).html();
-   y = $('.cost').eq(i).text();
-   z = $('.target').eq(i).val();
-  $('.cart').append(x + " ");
-  $('.cart').append(y + " ");
-  $('.cart').append("Qty: " + z);
-*/
-  var name = $(this).attr('data-name');
-  var price = Number($(this).attr('data-price'));
-  addItemToCart(name, price, 1);
-  saveCart();
-  displayCart();
-}); // end Add To Cart
 
 
 }); // end doc ready
